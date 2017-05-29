@@ -1,0 +1,11 @@
+<nav>
+<div>
+	<button md-icon-button [mdMenuTriggerFor]="menu">
+		<md-icon>more_vert</md-icon>
+	</button>
+	<md-menu #menu="mdMenu">
+		<button md-menu-item (click)='listEmployee()'> Employee List </button>
+		<button md-menu-item (click)='registerAccounts()'> Register Accounts </button>
+	</md-menu>
+</div>
+</nav>
