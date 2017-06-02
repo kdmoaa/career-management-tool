@@ -1,11 +1,17 @@
-<nav>
-<div>
-	<button md-icon-button [mdMenuTriggerFor]="menu">
-		<md-icon>more_vert</md-icon>
-	</button>
-	<md-menu #menu="mdMenu">
+<!--<nav navbar *ngIf='isSignin()'>-->
+<md-sidenav-container class="navbar">
+<md-sidenav>
+	<!--<button md-icon-button [mdMenuTriggerFor]="menu">-->
+		<!--<md-icon>more_vert</md-icon>-->
+	<!--</button>-->
+	<!--<md-menu #menu="mdMenu">-->
+	<md-menu>
 		<button md-menu-item (click)='listEmployee()'> Employee List </button>
 		<button md-menu-item (click)='registerAccounts()'> Register Accounts </button>
 	</md-menu>
-</div>
-</nav>
+	<!--<ul>-->
+		<!--<li (click)='listEmployee()'>Employee List</li>-->
+		<!--<li (click)='registerAccounts()'>RegisterAccounts</li>-->
+	<!--</ul>-->
+</md-sidenav>
+</md-sidenav-container>

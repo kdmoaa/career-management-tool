@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'common',
@@ -10,8 +11,13 @@ import { Router } from '@angular/router';
 export class CommonComponent {
 
   constructor(
-  	public router: Router
+  	public router: Router,
+	public loginService: LoginService
   ) { }
+
+    isSignin(): boolean {
+    	return this.loginService.isSignin();
+	}
 
 	listEmployee() {
 		return this.router.navigate(['/employees']);

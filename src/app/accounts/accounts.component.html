@@ -1,11 +1,35 @@
+<div class="container">
 <h2 class="form-wrapper"> Accounts List </h2>
+{{diagnostic}}
 <div class="form-wrapper">
-<ul>
-	<li *ngFor="let account of accounts">
-		<span>{{account.id}}</span>
-		<span>{{account.name}}</span>
-	</li>
-	</ul>
+<form #accountForm="ngForm" (ngSubmit)="registerAccount(accountForm)">
+	<div class="form-item">
+		<label for="accountId"></label>
+		<input type="number" name="accountId" ngModel required #accountId="ngModel" placeholder="Account ID" />
+	</div>
+	<div class="form-item">
+		<label for="name"></label>
+		<input name="name" ngModel required #name="ngModel" placeholder="NAME IS..." />
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary">Register Account!</button>
+	</div>
+</form>
 </div>
-
-
+<ul>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+		</tr>
+		</thead>
+		<tbody>
+	<tr *ngFor="let account of accounts">
+			<td>{{account.accountId}}</td>
+			<td>{{account.name}}</td>
+		</tr>
+		</tbody>
+		</table>
+</ul>
+</div>

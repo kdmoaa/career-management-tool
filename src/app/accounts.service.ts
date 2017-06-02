@@ -6,15 +6,24 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AccountsService {
+	accounts: Account[];
+	
 	constructor() { }
 
 	getAccounts(): Account[] {
-		let accounts = [
-			{ id: 101, name: 'user1' },
-			{ id: 102, name: 'admin1' },
-			{ id: 103, name: 'engineer1' }
+		this.accounts = [
+			{ accountId: 101, name: 'user1' },
+			{ accountId: 102, name: 'admin1' },
+			{ accountId: 103, name: 'engineer1' }
 		];
-		return accounts;
+		return this.accounts;
+	}
+
+	registerAccount(accountId: number, name: string): Account[] {
+		var account = new Account();
+		account.accountId = accountId;
+		account.name = name;
+		this.accounts.push(account);
+		return this.accounts;
 	}
 }
-
